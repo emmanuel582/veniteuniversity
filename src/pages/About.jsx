@@ -3,6 +3,7 @@ import { Button } from '../components/Button';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { CheckCircle, Lightbulb, Zap, Users, MapPin } from 'lucide-react';
+import campusImg from '../assets/campus.png';
 import './About.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -94,7 +95,7 @@ export function About() {
             </div>
           </div>
           <div className="split-image">
-            <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=800" alt="Campus" />
+            <img src={campusImg} alt="Campus" />
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import { Button } from '../components/Button';
+import mapImg from '../assets/map.png';
 import './Contact.css';
 
 export function Contact() {
@@ -57,7 +58,7 @@ export function Contact() {
             
             <div className="map-side" style={{ gridColumn: 'span 6' }}>
               <div className="map-placeholder">
-                <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&q=80&w=800" alt="Map View" className="map-img" />
+                <img src={mapImg} alt="Map View" className="map-img" />
                 <div className="map-overlay">
                   <span>Interactive Map Placeholder</span>
                 </div>

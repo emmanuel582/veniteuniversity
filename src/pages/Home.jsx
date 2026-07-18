@@ -2,6 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import { Button } from '../components/Button';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import campusImg from '../assets/campus.png';
+import codingImg from '../assets/coding.png';
+import medicalImg from '../assets/medical.png';
+import businessImg from '../assets/business.png';
 import './Home.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -86,7 +90,7 @@ export function Home() {
       {/* Expanding Image Section */}
       <section className="expanding-section">
         <div className="expanding-box">
-          <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&q=80&w=1920" alt="Campus Aerial View" className="expanding-img" />
+          <img src={campusImg} alt="Campus Aerial View" className="expanding-img" />
           <div className="expanding-overlay">
             <h2>The Campus of Tomorrow</h2>
           </div>
@@ -104,7 +108,7 @@ export function Home() {
               <p>Our College of Science & IT provides state-of-the-art facilities for Software Engineering, Cyber Security, and Computer Science. Code anywhere, deploy instantly.</p>
             </div>
             <div className="card-img-side">
-              <img src="https://images.unsplash.com/photo-1550439062-609e1531270e?auto=format&fit=crop&q=80&w=1000" alt="Coding lab" />
+              <img src={codingImg} alt="Coding lab" />
             </div>
           </div>
         </div>
@@ -113,7 +117,7 @@ export function Home() {
         <div className="stacked-card card-2">
           <div className="card-inner container">
             <div className="card-img-side">
-              <img src="https://images.unsplash.com/photo-1576091160550-2173ff9e8eb5?auto=format&fit=crop&q=80&w=1000" alt="Medical lab" />
+              <img src={medicalImg} alt="Medical lab" />
             </div>
             <div className="card-text-side">
               <h2>Pioneering Allied Health.</h2>
@@ -130,7 +134,7 @@ export function Home() {
               <p>The College of Social & Management Sciences builds the entrepreneurs and economists of the future. Honesty, Creativity, and Innovation drive our curriculum.</p>
             </div>
             <div className="card-img-side">
-              <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000" alt="Business meeting" />
+              <img src={businessImg} alt="Business meeting" />
             </div>
           </div>
         </div>
