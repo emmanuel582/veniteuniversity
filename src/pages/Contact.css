@@ -130,4 +130,8 @@
 
 @media (max-width: 768px) {
   .info-card { grid-column: span 12 !important; }
+  
+  .contact-hero-title { font-size: 2.5rem; }
+  .form-side h2 { font-size: 2rem; }
+  .form-side { padding: var(--spacing-4); }
 }

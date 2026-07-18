@@ -113,6 +113,13 @@ ul {
   gap: var(--gutter);
 }
 
+@media (max-width: 768px) {
+  .grid-12 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 /* Button Reset */
 button {
   border: none;

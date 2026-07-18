@@ -176,3 +176,17 @@
   .value-card { grid-column: span 12 !important; }
   .split-container { flex-direction: column; }
 }
+
+@media (max-width: 768px) {
+  .about-hero-title { font-size: 2.5rem; }
+  .hero-subtitle { font-size: 1.125rem; }
+  
+  .story-content h2 { font-size: 2rem; }
+  .story-content p { font-size: 1.125rem; }
+  
+  .mv-card h2 { font-size: 1.5rem; }
+  .mv-card p { font-size: 1rem; }
+  
+  .split-text h2 { font-size: 2rem; }
+  .split-text p { font-size: 1rem; }
+}
