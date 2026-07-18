@@ -10,6 +10,24 @@ import './Home.css';
 
 gsap.registerPlugin(ScrollTrigger);
 
+function AnimatedNumber({ end, suffix, decimals = 0 }) {
+  const nodeRef = useRef(null);
+  
+  useEffect(() => {
+    gsap.to(nodeRef.current, {
+      innerHTML: end,
+      duration: 2.5,
+      snap: { innerHTML: decimals ? 0.1 : 1 },
+      scrollTrigger: {
+        trigger: nodeRef.current,
+        start: 'top 85%',
+      }
+    });
+  }, [end, decimals]);
+  
+  return <><span ref={nodeRef}>0</span>{suffix}</>;
+}
+
 export function Home() {
   const mainRef = useRef(null);
 
@@ -141,20 +159,20 @@ export function Home() {
 
       </section>
 
-      {/* Sleek Stats Section */}
-      <section className="stats-section">
-        <div className="container stats-container">
+      {/* Stats Section */}
+      <section className="stats-section container">
+        <div className="stats-container reveal-up">
           <div className="stat-box">
-            <h3>150+</h3>
-            <p>Finished Sessions</p>
+            <h3><AnimatedNumber end={150} suffix="+" /></h3>
+            <p>Expert Faculty</p>
           </div>
           <div className="stat-box">
-            <h3>98%</h3>
-            <p>Satisfaction Rate</p>
+            <h3><AnimatedNumber end={98} suffix="%" /></h3>
+            <p>Employment Rate</p>
           </div>
           <div className="stat-box">
-            <h3>2.5K+</h3>
-            <p>Enrollments</p>
+            <h3><AnimatedNumber end={2.5} suffix="K+" decimals={1} /></h3>
+            <p>Students</p>
           </div>
         </div>
       </section>

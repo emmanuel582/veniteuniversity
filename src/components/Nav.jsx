@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { useTheme } from './ThemeProvider';
 import { Button } from './Button';
-import { Sun, Moon, Menu } from 'lucide-react';
+import { Sun, Moon, Menu, X } from 'lucide-react';
 import { gsap } from 'gsap';
 import './Nav.css';
 
@@ -51,8 +51,14 @@ export function Nav() {
         </div>
       </div>
 
+      {/* Mobile Menu Overlay */}
+      <div className={`mobile-menu-overlay ${isOpen ? 'open' : ''}`} onClick={() => setIsOpen(false)}></div>
+
       {/* Mobile Menu Dropdown */}
       <div className={`mobile-menu ${isOpen ? 'open' : ''}`}>
+        <button className="mobile-close-btn" onClick={() => setIsOpen(false)} aria-label="Close Menu">
+          <X size={32} />
+        </button>
         <NavLink to="/" onClick={() => setIsOpen(false)} className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Home</NavLink>
         <NavLink to="/about" onClick={() => setIsOpen(false)} className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>About</NavLink>
         <NavLink to="/programmes" onClick={() => setIsOpen(false)} className={({ isActive }) => `nav-link ${isActive ? 'active' : ''}`}>Programmes</NavLink>

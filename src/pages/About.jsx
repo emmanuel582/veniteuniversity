@@ -16,9 +16,32 @@ export function About() {
       gsap.fromTo('.about-hero-title', { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' });
       
       gsap.utils.toArray('.reveal-up').forEach(elem => {
-        gsap.fromTo(elem, { y: 40, opacity: 0 }, {
+        gsap.fromTo(elem, {
+          y: 50,
+          opacity: 0
+        }, {
+          scrollTrigger: {
+            trigger: elem,
+            start: 'top 85%',
+          },
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out'
+        });
+      });
+
+      gsap.utils.toArray('.reveal-left').forEach(elem => {
+        gsap.fromTo(elem, { x: -100, opacity: 0 }, {
           scrollTrigger: { trigger: elem, start: 'top 85%' },
-          y: 0, opacity: 1, duration: 0.8
+          x: 0, opacity: 1, duration: 1, ease: 'power3.out'
+        });
+      });
+
+      gsap.utils.toArray('.reveal-right').forEach(elem => {
+        gsap.fromTo(elem, { x: 100, opacity: 0 }, {
+          scrollTrigger: { trigger: elem, start: 'top 85%' },
+          x: 0, opacity: 1, duration: 1, ease: 'power3.out'
         });
       });
     }, mainRef);
@@ -35,11 +58,15 @@ export function About() {
         </div>
       </section>
 
-      <section className="story-section reveal-up">
-        <div className="container">
-          <div className="story-content">
+      <section className="story-section container">
+        <div className="split-container">
+          <div className="split-text reveal-left">
             <h2>Our Story</h2>
-            <p>Located in the vibrant community of Iloro Ekiti, Venite University was established to bridge the gap between academic theory and real-world execution. We don't just produce graduates; we produce innovators, creators, and the next generation of global employers.</p>
+            <p>Founded on the principles of excellence and innovation, Venite University was established to transform the educational landscape of Nigeria and beyond.</p>
+            <p>We are a leading research and development ground, training and producing knowledgeable, creative, and industrious manpower for the nation.</p>
+          </div>
+          <div className="split-image reveal-right">
+            <img src={campusImg} alt="Campus" />
           </div>
         </div>
       </section>
