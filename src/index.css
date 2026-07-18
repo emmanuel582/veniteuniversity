@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+  /* Spacing Scale (8px base) */
+  --spacing-1: 8px;
+  --spacing-2: 16px;
+  --spacing-3: 24px;
+  --spacing-4: 32px;
+  --spacing-6: 48px;
+  --spacing-8: 64px;
+  --spacing-12: 96px;
+
+  /* Sleek, Premium Dark Color Palette */
+  --color-accent: #A855F7;
+  /* A sleek, modern purple for a tech/premium feel */
+  --color-tertiary: #3B82F6;
+  /* Deep blue accent */
+
+  /* Defaults map to Dark Mode for the premium look */
+  --bg-primary: #050505;
+  --bg-secondary: #0A0A0A;
+  --bg-tertiary: #111111;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A1A1AA;
+  --border-color: #27272A;
+  --card-bg: #111111;
+
+  /* Typography */
+  --font-heading: 'Inter', sans-serif;
+  /* Shifted to Inter for that super modern tech look */
+  --font-body: 'Inter', sans-serif;
+
+  /* Border Radius */
+  --radius-md: 12px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+
+  /* Layout */
+  --max-width: 1280px;
+  --gutter: 24px;
+}
+
+/* We retain the light mode switch, but invert variables to keep it sleek */
+[data-theme='light'] {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F4F4F5;
+  --bg-tertiary: #E4E4E7;
+  --text-primary: #09090B;
+  --text-secondary: #52525B;
+  --border-color: #E4E4E7;
+  --card-bg: #FAFAFA;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  /* Dark space background vibe */
+  background-image: radial-gradient(circle at 50% 0%, #1a1a2e 0%, transparent 50%), radial-gradient(circle at 100% 100%, #150f24 0%, transparent 50%);
+  background-attachment: fixed;
+}
+
+[data-theme='light'] body {
+  background-image: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-2);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Layout Classes */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--gutter);
+}
+
+/* Button Reset */
+button {
+  border: none;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* Utilities */
+.text-accent {
+  color: var(--color-accent);
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
+}
+
+.gsap-reveal {
+  visibility: hidden;
+}

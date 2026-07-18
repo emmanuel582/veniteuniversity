@@ -1,0 +1,105 @@
+/* Programmes Page Styles */
+
+.prog-hero-title {
+  font-size: 4rem;
+  margin-bottom: var(--spacing-2);
+}
+
+.filter-section {
+  padding: var(--spacing-6) 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-3);
+}
+
+.filter-btn {
+  padding: 10px 24px;
+  border-radius: 100px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.filter-btn.active {
+  background-color: var(--color-accent);
+  color: #000;
+  border-color: var(--color-accent);
+}
+
+.prog-grid-section {
+  padding: var(--spacing-12) 0;
+  min-height: 50vh;
+}
+
+.prog-card {
+  background-color: var(--bg-secondary);
+  padding: var(--spacing-6);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.prog-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-accent);
+}
+
+.prog-tag {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-4);
+}
+
+.prog-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: var(--spacing-2);
+}
+
+.prog-card p {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-6);
+  flex-grow: 1;
+}
+
+.prog-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--text-primary);
+  transition: color 0.2s ease;
+}
+
+.prog-link:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 992px) {
+  .prog-card { grid-column: span 6 !important; }
+}
+
+@media (max-width: 768px) {
+  .prog-card { grid-column: span 12 !important; }
+}
